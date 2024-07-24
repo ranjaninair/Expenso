@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {HeaderComponent} from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -12,12 +11,6 @@ import { NotificationComponent } from './components/notification/notification.co
 
 export const routes: Routes = [
 
-    {
-        path:'', redirectTo: 'home', pathMatch: 'full'
-    },
-    {
-        path: 'home', component: HomeComponent
-    },
     {
         path:'dashboard', component: DashboardComponent
     },
@@ -42,6 +35,5 @@ export const routes: Routes = [
     {
         path:'notify', component: NotificationComponent
     },
-    
-
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
