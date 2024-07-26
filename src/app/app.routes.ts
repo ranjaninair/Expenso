@@ -6,34 +6,44 @@ import { ExpenseComponent } from './components/expense/expense.component';
 import { ReportComponent } from './components/report/report.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { NotificationComponent } from './components/notification/notification.component';
-
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
 
     {
-        path:'dashboard', component: DashboardComponent
+        path:'',
+        redirectTo:'login',
+        pathMatch: 'full'
     },
     {
-        path:'header', component: HeaderComponent
+        path:'login',
+        component:LoginComponent
     },
     {
-        path:'sidebar', component: SidenavComponent
-    },
-    {
-        path:'expense', component: ExpenseComponent
-    },
-    {
-        path:'report', component: ReportComponent
-    },
-    {
-        path:'analytics', component: AnalyticsComponent
-    },
-    {
-        path:'settings', component: SettingsComponent
-    },
-    {
-        path:'notify', component: NotificationComponent
-    },
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+        path:'',
+        component:LayoutComponent,
+        children: [
+            {
+                path:'dashboard',
+                component:DashboardComponent
+            },
+            {
+                path: 'expense',
+                component:ExpenseComponent
+            },
+            {
+                path: 'report',
+                component: ReportComponent
+            },
+            {
+                path: 'analytics',
+                component: AnalyticsComponent
+            },
+            {
+                path: 'settings',
+                component: SettingsComponent
+            }
+        ]
+    }
 ];

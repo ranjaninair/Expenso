@@ -1,7 +1,40 @@
+<mat-toolbar class="custom-toolbar">
+    <span class="name">Expenso</span>
+    <span class="example-spacer"></span>
+    <p class="transparent-padding">
+      <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Type Here..">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </p>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <a routerLinkActive="list-item-active" routerLink="/notify"> 
+        <mat-icon aria-hidden="false" aria-label="Notification bell icon" fontIcon="notifications"></mat-icon>
+      </a>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Profile</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>Settings</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>Logout</button>
+      </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <a routerLinkActive="list-item-active" routerLink="/user">
+        <mat-icon aria-hidden="false" aria-label="User icon" fontIcon="person" ></mat-icon>
+      </a>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+  </mat-toolbar>
 
-<header class="header">
+
+<!--<header class="header">
     <div class="header-logo">
-        <img src="assets/images/logo.png" alt="Logo">
+        <img src="assets\logo.png" alt="Logo">
         <span>Intellicloud Solutions</span>
     </div>
     
@@ -9,10 +42,10 @@
         <span class="material-icons">search</span>
         <input  type="text" placeholder="Search..."  />
         <div class="notify">
-            <span class="material-icons">circle_notifications</span>
+            <a routerLinkActive="list-item-active" routerLink="/notify"><span class="material-icons">circle_notifications</span></a>
     <div class="header-user">
-        <span class="material-icons">account_circle</span>
+        <a routerLinkActive="list-item-active" routerLink="/user"><span class="material-icons">account_circle</span></a>
     </div>
    </div>
     </div>
-</header>
+</header>-->

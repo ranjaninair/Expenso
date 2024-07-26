@@ -1,14 +1,42 @@
-<aside class="sidebar">
-  <nav class="nav">
-      <ol>
-          <li><a routerLinkActive="list-item-active" routerLink="/dashboard"><span class="material-icons">dashboard</span> Dashboard</a></li>
-          <li><a routerLinkActive="list-item-active" routerLink="/expense"><span class="material-icons">payments</span> Expense</a></li>
-          <li><a routerLinkActive="list-item-active" routerLink="/report"><span class="material-icons">assessment</span> Reports</a></li>
-          <li><a routerLinkActive="list-item-active" routerLink="/analytics"><span class="material-icons">data_exploration</span> Analytics</a></li>
-          <li><a routerLinkActive="list-item-active" routerLink="/settings"><span class="material-icons">settings</span> Settings</a></li>
-      </ol>
-  </nav>
-</aside>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav  mode="side" [opened]="isExpanded"  class="sidenav">
+    <mat-nav-list>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard" [ngClass]="{'collapsed': !isExpanded}">
+    <mat-icon>dashboard</mat-icon> 
+    <span *ngIf="isExpanded"> Dashboard </span>
+  </a>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/expense" [ngClass]="{'collapsed': !isExpanded}">
+    <mat-icon>local_atm</mat-icon> 
+    <span *ngIf="isExpanded"> Expense </span> 
+  </a>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/report" [ngClass]="{'collapsed': !isExpanded}"> 
+    <mat-icon>report</mat-icon>
+    <span *ngIf="isExpanded"> Reports </span>
+  </a>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/analytics" [ngClass]="{'collapsed': !isExpanded}"> 
+    <mat-icon>table_chart_view</mat-icon> 
+    <span *ngIf="isExpanded"> Analytics </span> 
+    </a>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/settings" [ngClass]="{'collapsed': !isExpanded}"> 
+    <mat-icon>settings</mat-icon> 
+    <span *ngIf="isExpanded"> Settings </span> 
+  </a>
+
+</mat-nav-list>
+</mat-sidenav>
+
+<mat-sidenav-content>
+  <a class="tog" mat-icon-button (click)="toggleSidebar()">
+    <mat-icon>{{ isExpanded ? 'chevron_left' : 'chevron_right' }}</mat-icon>
+  </a>
+  <router-outlet></router-outlet>
+</mat-sidenav-content>
+</mat-sidenav-container>
 
 
 

@@ -1,55 +1,77 @@
-.sidebar {
-  position: sticky;
-  width: 180px;
-  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-  color: white;
+
+
+
+mat-sidenav-container {
   height: 100%;
-  padding-top: 25px;
-  border-radius: 0 20px 0 0;
-  
 }
 
-.nav ol {
-  position: relative;
-  width: 100%;
+mat-sidenav, mat-sidenav-content{
+  padding: 16px;
+}
+
+mat-sidenav {
+  background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+  background-blend-mode: normal,color-burn;
+  width: 200px
+}
+
+.mat-list-item {
   display: block;
+  color: #8a99ae !important;
+  align-items: center;
+  padding: 12px 16px; 
+  &:hover {
+    color: #031623 !important;
+    cursor: pointer;
+  }
 }
 
-.nav ol li {
-  text-align: left;
-  width: 100%;
-  position: relative;
-  list-style-type: none;
-}
-
-.nav ol li a {
-  display: flex;
-  color: rgb(250, 250, 250);
+mat-nav-list a {
+  color: inherit; 
   text-decoration: none;
-  font-size: 15px;
-  padding: 5px 3px;
-  margin: 1px 0;
 }
 
-.nav ol li:hover{
-  letter-spacing: 0.2px;
-  transition: 0.4s;
+mat-nav-list a:hover {
+  color: #d4d7e8;
+  text-decoration: none;
 }
 
-.nav ol li a:hover{
-  background-color: #3e445b;
-  border-left: 5px solid #ffffff;
+mat-sidenav-content{
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+mat-icon{
+  color: #05234f;
+  font-family: 'Material Icons';
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 
-.nav ol li a .material-icons {
-  margin-right: 15px;
+a.tog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 10px;
+  text-decoration: none;
+  color: inherit;
 }
 
-.content {
-  flex-grow: 1;
-  padding: 20px;
-  box-sizing: border-box;
+a.tog:hover {
+  background-color: #e0e0e0;
+  color: #3f51b5; 
 }
 
+a.tog:active {
+  background-color: #c0c0c0;
+  color: #303f9f; 
+}
+
+a.tog mat-icon {
+  font-size: 24px;
+}
 
