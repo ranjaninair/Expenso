@@ -1,18 +1,17 @@
 <mat-toolbar class="custom-toolbar">
-    <span class="name">Expenso</span>
+    <span class="name">Intelli</span><span class="cloud">Cloud</span>
+    <span class="name">Intelli</span>
     <span class="example-spacer"></span>
     <p class="transparent-padding">
-      <mat-form-field appearance="fill">
-        <mat-label>Search</mat-label>
-        <input matInput placeholder="Type Here..">
+      <input class="searchInput" type="text" placeholder="Search for...">
         <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
+      
     </p>
-    <button mat-button [matMenuTriggerFor]="menu">
+    
       <a routerLinkActive="list-item-active" routerLink="/notify"> 
         <mat-icon aria-hidden="false" aria-label="Notification bell icon" fontIcon="notifications"></mat-icon>
       </a>
-      </button>
+      
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Profile</button>
         <mat-divider></mat-divider>
