@@ -10,7 +10,7 @@ mat-sidenav, mat-sidenav-content {
 mat-sidenav {
   background-color: #1c2b36 !important; /* Set background color to blue */
   color: white !important; /* Set font color to white */
-  width: 200px;
+  width: 250px !important;
   border-top-right-radius: 0px !important;
 }
 
